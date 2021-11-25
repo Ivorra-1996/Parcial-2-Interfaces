@@ -7,12 +7,12 @@ function App() {
   const[tragos,agregarCotelPorLetra] = useState([]);
   const[trago,setTrago] = useState("");
   
-  const consultarApi = async(e,strNombreDelTrago) =>{
+  const consultarApi = async(e,strTipodeBusqueda,strNombreDelTrago) =>{
     e.preventDefault()
     try {
       if(strNombreDelTrago !== ""){ 
         console.log("Cargando Tragos")
-        const api = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${strNombreDelTrago}`);
+        const api = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?${strTipodeBusqueda}=${strNombreDelTrago}`);
         const listaDetragos = await api.json();
         listaDetragos.drinks !== null
         ?
