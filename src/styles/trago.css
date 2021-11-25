@@ -1,0 +1,6 @@
+.card:hover{
+    border: 2px solid whitesmoke !important;
+    transition: all 0.7s linear;
+    transform: scale(1.1);
+}
+
